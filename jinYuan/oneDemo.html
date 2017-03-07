@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>oneDay</title>
+    <!--<style type="text/css">-->
+        <!--#a input:hover #a #b{-->
+            <!--opacity: 1;-->
+        <!--}-->
+        <!--#b{-->
+            <!--opacity: 0;-->
+        <!--}-->
+    <!--</style>-->
+    <style type="text/css">
+        #b{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="a">
+        <input type="checkbox" id="ck" />123123
+        <div id="b">12333123123</div>
+    </div>
+    <button id="but">
+        123123
+    </button>
+</body>
+</html>
+<script type="text/javascript">
+    var ck = document.getElementById('ck');
+    var b  = document.getElementById('b');
+    var but= document.getElementById('but');
+    ck.onmouseover = function () {
+        b.style.display = 'block';
+    }
+    ck.onmouseout = function () {
+        b.style.display = 'none';
+    }
+    but.onmousedown = function () {
+        alert('12312');
+    }
+</script>
