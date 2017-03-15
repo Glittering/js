@@ -1,0 +1,33 @@
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<select></select>
+	<select></select>
+</body>
+</html>
+<script>
+	var s1 = document.getElementsByTagName('select')[0];
+	var s2 = document.getElementsByTagName('select')[1];
+	var city = {
+		'河北':['保定','石家庄','邯郸'],
+		'河南':['郑州','开封','洛阳']
+	}
+	var is1 = '';
+	for(var o in city){
+		is1 += '<option value="'+o+'">'+o+'</option>';
+	}
+	s1.innerHTML = is1;
+	s1.onchange = function(){
+		var is2 = '';
+		var val = s1.value;
+		var city_1 = city[val];
+		for(var i in city_1){
+			is2 += '<option value="'+city_1[i]+'">'+city_1[i]+'</option>';
+		}
+		s2.innerHTML = is2;
+	}
+	s1.onchange();
+</script>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        input{
+            position: absolute;
+            left: 0px;
+            width: 500px;
+            height: 200px;
+            background: peru;
+        }
+    </style>
+</head>
+<body>
+    <input type="button" value="move" onclick="divMove()">
+</body>
+</html>
+<script>
+    function divMove() {
+        var div = document.getElementsByTagName('input')[0];
+//        alert(div.style.left)
+        setInterval(function () {
+            if(div.offsetLeft >= 300){
+                clearInterval(this);
+            }else{
+                div.style.left = div.offsetLeft + 10 +'px'
+            }
+        },100)
+    }
+</script>
