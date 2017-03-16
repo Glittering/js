@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <input type="button" id="bt1" value="open">
+    <input type="button" id="bt2" value="close">
+</body>
+</html>
+<script>
+    var bt1 = document.getElementById('bt1');
+    var bt2 = document.getElementById('bt2');
+    var opena=function () {
+        return open('http://www.baidu.com')
+    }
+    bt2.onclick = function () {
+        this.opena.close()
+    }
+
+</script>

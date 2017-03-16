@@ -42,6 +42,27 @@ window.prompt(a,b) a是提示，b是默认值
 
 7. offsetleft 控件距离左侧距离
 
+
+#2017年 03月 16日 星期四 09:11:22 CST
+
+1. onselect
+2. oncopy		nocopy
+3. oncut onpaste	no cut or onpaste
+4. oncontextmenu	right key  fobit list
+5. addEventListener('event',function)	event needn't on
+6. removeEventListener('',fun..)
+7. confirm();		a tip for del in a.oclick
+8. location
+    + href
+    + hash
+    + host
+    + pathname
+    + 
+9. history
+    + go(-1)	-1 is back	1 is go
+10. 
+
+
 ***写js的位置，1.onclick中内嵌。2.onclick调用js方法。3.js中获取点击事件。***
 
 
