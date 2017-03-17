@@ -46,7 +46,7 @@ window.prompt(a,b) a是提示，b是默认值
 #2017年 03月 16日 星期四 09:11:22 CST
 
 1. onselect
-2. oncopy		nocopy
+2. oncopy		nocopy       window.event.returnValue=false
 3. oncut onpaste	no cut or onpaste
 4. oncontextmenu	right key  fobit list
 5. addEventListener('event',function)	event needn't on
@@ -59,8 +59,12 @@ window.prompt(a,b) a是提示，b是默认值
     + pathname
     + 
 9. history
-    + go(-1)	-1 is back	1 is go
+    + go(-1)	-1 is back	1 is go   window.history.go
 10. 
+
+#2017年 03月 17日 星期五 10:24:31 CST
+1. input.onfocus 获取焦点
+   input.onblur  失去焦点
 
 
 ***写js的位置，1.onclick中内嵌。2.onclick调用js方法。3.js中获取点击事件。***

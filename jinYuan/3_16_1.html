@@ -7,16 +7,51 @@
 <body>
     <input type="button" id="bt1" value="open">
     <input type="button" id="bt2" value="close">
+    <a href="javascript:;" >1111</a>
+    <input type="text">
+    <input type="checkbox" value="select all" id="se">select all</input>
+    <input type="checkbox" name="www">111
+    <input type="checkbox" name="www">111
+    <input type="checkbox" name="www">111
+    <input type="checkbox" name="www">111
+    <input type="checkbox" name="www">111
+    <input type="checkbox" name="www">111
+    <input type="checkbox" name="www">111
+    <input type="text" oncopy="window.event.returnValue=false" oncontextmenu="window.event.returnValue=false">11111</input>
+
 </body>
 </html>
 <script>
+
     var bt1 = document.getElementById('bt1');
     var bt2 = document.getElementById('bt2');
-    var opena=function () {
-        return open('http://www.baidu.com')
-    }
-    bt2.onclick = function () {
-        this.opena.close()
-    }
+    var a = document.getElementsByTagName('a')[0];
+//    var input = document.getElementsByTagName(input)
+    var select = document.getElementById('se');
 
+//    var opena = function () {
+//        return open('http://www.baidu.com')
+//    }
+//    bt2.onclick = function () {
+////        this.opena.close()
+//        alert(location.hostname);
+//    }
+    alert(a)
+    a.onclick = function () {
+        alert(1)
+//        console.log(location.hostname);
+        window.history.go(-1)
+    }
+//    input.onmouseover()
+//    {
+//
+//    }
+    select.onclick= function () {
+//        alert('111')
+//        alert(select.select)
+        var www= document.getElementsByName('www');
+        www[0].checked = true;
+//        alert(www[1])
+
+    }
 </script>
