@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>test form</title>
+    <link rel="stylesheet" href="css/semantic.css">
+  </head>
+  <body>
+    <div class="ui segment vrey padded inverted blue">
+    <form class="ui form" action="index.html" method="post" onsubmit="return sub();">
+      <table class="ui table">
+        <tr class="ui tr">
+          <td class="ui td">username:</td>
+          <td class="ui td"><input class="ui user" type="text" placeholder="your user name" id="user"></td>
+          <td class="ui td" ><span id="user_error"></span></td>
+        </tr>
+        <tr class="ui tr">
+          <td class="ui td">email:</td>
+          <td class="ui td"><input class="ui email" type="email" placeholder="your email" id="email"></td>
+          <td class="ui td"><span id="email_error"></span></td>
+        </tr>
+        <tr class="ui tr">
+          <td class="ui td">password:</td>
+          <td class="ui td"><input class="ui password" type="password" placeholder="your password" id="psword"></td>
+          <td class="ui td"><span id="psword_error"></span></td>
+        </tr>
+        <tr class="ui tr">
+          <td class="ui td" >password again:</td>
+          <td class="ui td"><input class="ui password" type="password" placeholder="your password again" id="rpsword"></td>
+          <td class="ui td"><span id="rpsword_error"></span></td>
+        </tr>
+        <tr class="ui tr">
+          <td align="center" colspan="3"><input type="submit" class='ui button' id="po" value="post"></input></td>
+        </tr>
+      </table>
+    </form>
+    </div>
+  </body>
+</html>
+<script>
+  var chk = {
+    user : false,
+    email : false,
+    psword : false,
+    rpsword : false,
+  };
+  function $(event_get){
+    return document.getElementById(event_get);
+  }
+  // console.log($('psword_error').value)
+  // $('psword_error').innerHTML = "200"
+function sub() {
+  for (var i in chk) {
+    // console.log(i);
+    if (chk[i] == false) return false;
+  }
+}
+var patt = /^\s*$/;
+$('user').onblur = function(){
+  var username_value = this.value;
+  if (patt.test(username_value)) {
+    $('user_error').innerHTML = '<span style="color:red;font-size:14px">用户名不能为空</span>';
+    // return false;
+  }else{
+    $('user_error').innerHTML = '<span style="color:green;font-size:14px">用户名可用</span>';
+    chk['user'] = true;
+    // console.log(chk['user']);
+  }
+}
+var pat = /^([0-9A-Za-z\-_\.]+)@([0-9a-z]+\.[a-z]{2,3}(\.[a-z]{2})?)$/;
+$('email').onblur = function(){
+  var email_value = this.value;
+  if(pat.test(email_value)){
+    $('email_error').innerHTML = '<span style="color:green;font-size:14px">邮箱可用</span>';
+    chk['email'] = true;
+  }else {
+    $('email_error').innerHTML = '<span style="color:red;font-size:14px">邮箱格式错误</span>';
+  }
+}
+</script>
