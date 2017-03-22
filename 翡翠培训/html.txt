@@ -1,0 +1,78 @@
+w3c
+菜鸟教程
+
+
+**********************
+
+1.块级标签	---独立成行，默认宽度100%，可以直接设置宽高。
+
+<div>
+<table>	--样式:border   td:colspan rowspan     
+<form>	action 提交跳转网页	method 提交方式
+<label>
+h1-6 	自带加粗
+p	文本段落
+<ul><li>	无序列表
+
+2.行级标签	---可与其他行级标签并排显示，默认宽度0，宽度被内容撑开，不可以设置宽高
+
+
+
+3.行块标签	---同时拥有行级标签和块级标签特性，既可以设置宽高，又可以独立显示。但是行库块之间会有空隙。
+
+<input>
+
+
+**********************
+
+
+
+
+
+
+
+
+table
+写在td里
+colspan	合并行
+rowspan 合并列
+
+
+form	表单
+	action="" --跳转的页面
+	method="" --提交方法  get post
+
+
+input	行块元素（行级块状元素）
+	type=""		test  password  button  email  submit提交输入框  date日历  color拾色器  checkbox复选按钮  radio单选  reset
+	value 定义输入框的默认文字
+	placeholder 输入框的提示文字
+	checkbox    diable checked
+	radio  用name来区分组	
+
+
+label	标签内内容绑定
+	for 绑定按钮
+
+
+br 换行		hr 带分割线
+
+
+font	--css里
+	font-size	font-weight 粗细，斜体等	font-family 字体
+
+
+ul	CSS list-style
+
+float	浮动	一般用left
+	li 左浮动，	ul右浮动   可以正确顺序右移
+
+清浮动	overflow：hidden	--缺点，溢出元素隐藏
+	加一个box  css写 clear:both	--不符合w3c标准
+
+
+
+
+
+
+

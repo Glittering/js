@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>testJS</title>
+  </head>
+  <body >
+    <a class="ui segment" href="javascript:alert(new Date());">click</a>
+    <input id='put' type="button" class="ui input" value="give time" onclick="javascript:alert(new Date())">
+    <input  id ='put2' type="text" name="" value="">
+    <ul id="myList"><li>Coffee</li><li>Tea</li></ul>
+    <button onclick="myFunction()">add childNode</button>
+  </body>
+</html>
+<script type="text/javascript">
+var str = ['adsdssadf','adf','sss'];
+
+
+// str = str.pop();
+// console.log(str);
+
+
+// window.prompt('is you','yes');
+
+// 对象.style.属性名
+window.onload=function(){
+
+}
+
+var put = document.getElementById('put');
+put.onmousedown = function(){
+  var put2 = document.getElementById('put2');
+  console.log(put.value);
+  put2.value='zero';
+  console.log(put2);
+  console.log(str.splice());
+}
+
+function a(){
+  var str = '123123123';
+  console.log(isNaN(str));
+}
+
+var json={
+  'QQ':2814432992,
+  'MSN':'zhao@sina.com'
+}
+
+a();
+
+console.log(eval(json));
+console.log(json);
+
+var a ='121231ABCdef';
+console.log(a[5]);
+console.log(a.charAt(5));
+console.log(a.toLowerCase());
+console.log(a.slice());
+
+var a = new Date ('October 15, 2011, 10:30:00');
+// alert(a);
+
+console.log(a.getDate());
+console.log(a.getYear());
+
+// function which(event){
+//   event = e || window.event;
+//   alert(event)
+// }
+function myFunction(){
+  var myl = document.getElementById('myList');
+  var node = document.createElement('li');
+  var textnode = document.createTextNode('Water');
+  node.appendChild(textnode);
+  myl.appendChild(node);
+}
+
+// window.confirm();
+
+</script>
