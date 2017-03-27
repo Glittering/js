@@ -1,0 +1,22 @@
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<button id="btn">点击我</button>
+</body>
+</html>
+<script>
+	var btn = document.getElementById('btn');
+	var ajax = new XMLHttpRequest();
+	btn.onclick = function(){
+		ajax.onreadystatechange = function(){
+			if(ajax.readyState == 4 && ajax.status == 200){
+				alert(ajax.responseText);
+			}
+		}
+		ajax.open('get','1.txt?'+Math.random(),true);
+		ajax.send(null);
+	}
+</script>

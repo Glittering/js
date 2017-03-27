@@ -1,0 +1,76 @@
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<form action="" method="post" enctype="" onsubmit="return chk();">
+		<p>用户名：<input type="text" name="user" id="user" value=""><i></i></p>
+		<p>密码：<input type="password" name="pass" id="pass" value="" /><i></i></p>
+		<p><input type="submit" name="add" value="注册" /></p>
+	</form>
+</body>
+</html>
+<script type="text/javascript" src="./jquery-1.8.2.min.js"></script>
+<script>
+	//定义json初始化form表单状态(阻止表单提交)
+	var form = {user:false,pass:false};
+	// 给用户名绑定光标离开事件
+	$('#user').blur(function(){
+		// 定义正则(为空)
+		var patt = /^\s*$/;
+		// 获取当前对象的值
+		var val = $(this).val();
+		// 如果匹配成功，则提示用户名不能为空
+		if(patt.test(val)){
+			$('#user').next('i').html('<span style="color:red;">*用户名不能为空</span>');
+			return false;
+		}
+		// 防止对象不识别(ajax时候用)
+		var obj = $(this);
+		// 用ajax将用户名提交到后台[第一个参数:提交的地址，第二个参数：要提交的值，第三个参数：匿名函数]
+		$.post('./1.php',{user:val,id:Math.random(),checkuser:1},function(data){
+			if(data == 0){
+				obj.next('i').html('<span style="color:red;">用户名已存在</span>');
+				return false;
+			}else if(data == 1){
+				form.user = true;
+				obj.next('i').html('<span style="color:green;">用户名可用</span>');				
+			}
+		});
+	});
+	// 定义光标离开密码框事件
+	$('#pass').blur(function(){
+		// 定义正则(以数字字母下划线开头的6-12位字符)
+		var patt_1 = /^\w{6,12}/;
+		var val = this.value;
+		if(!patt_1.test(val)){
+			$('#pass').next('i').html('<span style="color:red;">*密码必须为6-12位</span>');
+			return false;
+		}
+		form.pass = true;
+		$('#pass').next('i').html('<span style="color:green;">*密码可用</span>');
+	});
+	// 阻止form表单在没有验证的情况下提交
+	function chk(){
+		$('#user').blur();
+		$('#pass').blur();
+		for(o in form){
+			if(form[o] == false){
+				return false;
+			}
+		}
+		var user = $('#user').val();
+		var pass = $('#pass').val();
+		$.post('./1.php',{user:user,pass:pass,id:Math.random(),checksub:1},function(data){
+				if(data == 0){
+					alert('注册失败');
+				}else{
+					alert('注册成功');
+					location.href = 'http://www.baidu.com';
+				}
+		});
+		// 直接阻止form提交(目的是用上边的ajax提交)
+		return false;
+	}
+</script>
